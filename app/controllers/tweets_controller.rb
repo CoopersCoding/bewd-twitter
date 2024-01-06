@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweets = Task.new(tweets_params)
+    @tweets = Tweets.new(tweets_params)
     render 'tweets/create' if @tweet.save
   end
 

@@ -11,10 +11,7 @@ Rails.application.routes.draw do
   delete '/sessions' => 'sessions#destroy'
 
   # TWEETS
-  post '/tweets' => 'tweets#create'
-  delete '/tweets' => 'tweets#destroy'
-  get '/tweets' => 'tweets#index'
-  # get '/users/:username/tweets' => 'tweets#index'
+  resources :tweets, only: [:create, :destroy, :index]
 
   # Redirect all other paths to index page, which will be taken over by AngularJS
   get '*path' => 'homepage#index'
